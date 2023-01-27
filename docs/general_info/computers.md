@@ -1,3 +1,6 @@
+---
+password: 'secret'
+---
 # Guide to the Local Workstations and Clusters
 
 ## Access Office Workstations
@@ -47,3 +50,4 @@ ___
 - Hardware - ???
 - Storage Available
 - Admins
+

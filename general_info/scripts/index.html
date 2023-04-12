@@ -78,6 +78,18 @@
             
             <li class="nav-item" data-level="1"><a href="#job-scripts" class="nav-link">Job Scripts</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#myriad" class="nav-link">Myriad</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#jade" class="nav-link">JADE</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#archer" class="nav-link">ARCHER</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -86,7 +98,44 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="example-scripts">Example Scripts</h1>
-<h1 id="job-scripts">Job Scripts</h1></div>
+<h1 id="job-scripts">Job Scripts</h1>
+<h2 id="myriad">Myriad</h2>
+<h3 id="gromacs">Gromacs</h3>
+<h2 id="jade">JADE</h2>
+<h3 id="namd3">NAMD3</h3>
+<pre><code>#!/bin/bash
+
+# set the number of nodes
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=20
+
+# set max wallclock time
+#SBATCH --time=1:00:00
+
+# set name of job
+#SBATCH --job-name=TryRep
+
+# set number of GPUs - asks for 1
+#SBATCH --gres=gpu:1
+
+# type of partition 
+#SBATCH --partition=small
+
+# mail alert at start, end and abortion of execution
+#SBATCH --mail-type=ALL
+
+# send mail to this address
+#SBATCH --mail-user=&lt;your_email_address@ucl.ac.uk&gt;
+
+# run the application
+
+ulimit -n 4096
+
+module load namd/3.0-alpha7
+
+namd3 input.inp &gt; prod1.out
+</code></pre>
+<h2 id="archer">ARCHER</h2></div>
             </div>
         </div>
 

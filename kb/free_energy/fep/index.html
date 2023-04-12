@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>Fep - Rosta Group Wiki</title>
+        <title>Introduction - Rosta Group Wiki</title>
         <link href="../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
@@ -70,12 +70,37 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#introduction" class="nav-link">Introduction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#absolute-binding-free-energy" class="nav-link">Absolute Binding Free Energy</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#relative-binding-free-energy" class="nav-link">Relative Binding Free Energy</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-</div>
+<h1 id="introduction">Introduction</h1>
+<p>Free energy perturbation (FEP) is a computational method used in molecular modeling and drug discovery to estimate the free energy difference between two different states of a molecular system. It is based on the concept of thermodynamic equilibrium and uses statistical mechanics principles to calculate the change in free energy as a result of perturbing a system from one state to another.</p>
+<p>In FEP, the free energy difference between two states, such as different conformations of a molecule or different ligand-receptor interactions, is calculated by transforming one state into the other through a series of intermediate states using a set of mathematical equations. This involves applying an external perturbation to the system, such as changing the atom positions or modifying the chemical identity of a molecule, and then computing the free energy change associated with this perturbation.</p>
+<h1 id="absolute-binding-free-energy">Absolute Binding Free Energy</h1>
+<p>In ABFE, the ligand itself "disappears" from the binding site, and this process is used to calculate the binding free energy. In the process, the various physical properties, like charges, are slowly turned off on the ligand, so that the receptor effectively stops interacting with the ligand and water can free diffuse in the binding region. This is an "alchemical pathway" that is physically impossible but at the end should generate the same energetic difference from which the binding energy can be calculated.</p>
+<p>This method and how to do it is described <a href="http://alchemistry.org/wiki/Main_Page">here</a></p>
+<p>Some recommended reading:
+- Aldeghi M, Bluck JP, Biggin PC. Absolute Alchemical Free Energy Calculations for Ligand Binding: A Beginner's Guide. Methods Mol Biol. 2018;1762:199-232. <a href="10.1007/978-1-4939-7756-7_11.">doi:10.1007/978-1-4939-7756-7_11.</a> PMID: 29594774.</p>
+<p>A Script to do majority of this method is available in-house <a href="github.com">here</a></p>
+<h1 id="relative-binding-free-energy">Relative Binding Free Energy</h1>
+<p>RBFE differs from ABFE in that transitions are performed from one atom to another to go from one ligand to another ligand that only differs a little bit and thus calculate the binding free energy difference between the two ligand.</p></div>
             </div>
         </div>
 

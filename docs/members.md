@@ -1,4 +1,5 @@
 # Current Members
+last updated: 30/11/2023
 
 #### Prof. Edina Rosta
 Principal Investigator <br/>
@@ -6,12 +7,17 @@ Email - <e.rosta@ucl.ac.uk>
 
 #### Dr. Dénes Berta
 Postdoc <br/>
-Email - <denes.berta.20@ucl.ac.uk>  <br/>
-Topics - QM, MD, ML
-#### Dr. Zsuzsanna Koczor-Benda
+Email - <d.berta@ucl.ac.uk>  <br/>
+Topics - QM/MM, QM, ligand design
+#### Dr. Bálint Dudás
 Postdoc <br/>
-Email - <z.koczor-benda@ucl.ac.uk> <br/>
-Topics - ML, QM
+Email - <b.dudas@ucl.ac.uk>  <br/>
+Topics - MD, ligand design
+#### Dr. Tiejun Wei
+Postdoc <br/>
+Email - <tirjun.wei@ucl.ac.uk>  <br/>
+Topics - enhanced sampling, ML
+
 #### Teodora Mateeva
 PhD student <br/>
 Email - <t.mateeva@ucl.ac.uk> <br/>
@@ -19,16 +25,40 @@ Topics - MD, ML
 #### Sam Martino
 PhD student <br/>
 Email - <sam.martino.20@ucl.ac.uk> <br/>
-Topics - ML, MD
-#### Pedro Juan Buigues Jorro
-PhD student <br/>
-Email - <pedro.jorro.20@ucl.ac.uk> <br/>
-Topics - MD, ML, MLTSA
+Topics - ML, MD, docking
 #### Sebastian Berger
 PhD student <br/>
 Email - <sebastian.berger@ucl.ac.uk> <br/>
-Topics - PKA calculation, QM, ML
-#### Daniel Felfoldi
+Topics - pKa calculation, QM, ML
+#### Harry Lewin
+PhD student <br/>
+Email - <harry.lewin.23@ucl.ac.uk> <br/>
+Topics - MD, QM/MM
+
+#### Madhav Sharma
 Research Assistant <br/>
-Email - <daniel.felfoldi@ucl.ac.uk> <br/>
-Topics - MD, FEP, ML
+Email - <madhav.sharma.17@ucl.ac.uk>
+
+# Previous Members (not a complete list)
+
+### Postdocs
+Dr. Zsuzsanna Koczor-Benda <br/>
+Dr. Sascha Gehrke <br/>
+Dr. Tamás Földes <br/>
+Dr. Francois Sicard <br/>
+Dr. István Szabó <br/>
+Dr. Silvia Gomez-Coca <br/>
+Dr. Reynier Suardiaz <br/>
+Dr. Pablo G. Jambrina <br/>
+
+
+### PhD students
+Vladimir Koskin <br/>
+Pedro Juan Buigues Jorro <br/>
+Daniel Groom <br/>
+Fahim Faizi <br/>
+Magd Badaoui <br/>
+Adam Kells <br/>
+
+### Research Assistants
+Daniel Felfoldi

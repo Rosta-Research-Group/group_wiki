@@ -12,12 +12,9 @@
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
-
-        <script src="../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
     </head>
 
     <body>
@@ -83,11 +80,6 @@
             
             <li class="nav-item" data-level="1"><a href="#general-informations" class="nav-link">General Informations</a>
               <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#introduction" class="nav-link">Introduction</a>
-              <ul class="nav flex-column">
             <li class="nav-item" data-level="2"><a href="#members" class="nav-link">Members</a>
               <ul class="nav flex-column">
               </ul>
@@ -100,10 +92,6 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#tutorials" class="nav-link">Tutorials</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -113,16 +101,9 @@
 
 <h1 id="general-informations">General Informations</h1>
 <p>This page gives you a guide to the basic operations to the lab.</p>
-<h1 id="introduction">Introduction</h1>
-<p>As part of our collaborative work environment, we highly recommend using GitHub as a platform to save and share your code. You also have access to the Rosta Group GitHub, where you can find existing codes that may be beneficial to your work.</p>
-<p>In addition, we invite you to join our Slack channel, where we communicate in real-time, exchange ideas, and foster a sense of community within the team.</p>
-<p>To ensure smooth continuity of work, especially when using multiple computers, documenting (logging) your progress is encouraged. This allows others to easily pick up where you left off, if necessary, and helps maintain a cohesive workflow.</p>
-<p>Thank you for your valuable contribution to our team, and we appreciate your efforts in keeping our work organized and accessible to all team members.</p>
-<p>Below, you can find additional information on the members of the lab, how to use the workstations and clusters and some basic information on the different softwares that are used by the group.</p>
 <h2 id="members"><a href="../../members/">Members</a></h2>
 <h2 id="clusters-and-workstations"><a href="../computers/">Clusters and Workstations</a></h2>
-<h2 id="software-basics"><a href="../software_basics/">Software Basics</a></h2>
-<h2 id="tutorials"><a href="../tutorials/">Tutorials</a></h2></div>
+<h2 id="software-basics"><a href="../software_basics/">Software Basics</a></h2></div>
             </div>
         </div>
 
@@ -130,12 +111,14 @@
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
+        <script src="../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
         <script>
             var base_url = "../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../../js/base.js" defer></script>
-        <script src="../../search/main.js" defer></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">

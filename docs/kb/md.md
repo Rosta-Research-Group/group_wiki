@@ -37,7 +37,7 @@ important in this regard. Some ions, like Mg2+ will require an
 octahedral coordination, which may need to be completed by water
 molecules. Others, like Zn2+, prefer tetrahedral, which is difficult 
 to maintain by formal charge non-bonding interaction setups. Special
-force field patches can be employed to address this, e.g. ZAFF. 
+force field patches can be employed to address this, e.g. [ZAFF](zaff.md). 
 Depending on the software, implementing these may require a 
 modification to the topology. Also pay attention to other waters, as 
 some may have a structural role in positions hardly accessible from 

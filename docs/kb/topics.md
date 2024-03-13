@@ -3,6 +3,7 @@ This page collects notes on important topics and methods that you might need to 
 
 ## [Quantum Mechanics](qm.md)
 ## [Molecular Dynamics](md.md)
+#### [ZAFF setup in NAMD](zaff.md)
 ## [Proteins](protein.md)
 ## [Free Energy Calculations](free_energy/free_energy.md)
 ## [Machine Learning](ml.md)

@@ -18,14 +18,6 @@ Postdoc <br/>
 Email - <tirjun.wei@ucl.ac.uk>  <br/>
 Topics - enhanced sampling, ML
 
-#### Teodora Mateeva
-PhD student <br/>
-Email - <t.mateeva@ucl.ac.uk> <br/>
-Topics - MD, ML
-#### Sam Martino
-PhD student <br/>
-Email - <sam.martino.20@ucl.ac.uk> <br/>
-Topics - ML, MD, docking
 #### Sebastian Berger
 PhD student <br/>
 Email - <sebastian.berger@ucl.ac.uk> <br/>
@@ -59,6 +51,8 @@ Daniel Groom <br/>
 Fahim Faizi <br/>
 Magd Badaoui <br/>
 Adam Kells <br/>
+Teodora Mateeva <br/>
+Sam Martino <br/>
 
 ### Research Assistants
 Daniel Felfoldi

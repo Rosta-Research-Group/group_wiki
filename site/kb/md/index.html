@@ -8,16 +8,13 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Molecular Dynamics - Rosta Group Wiki</title>
+        <title>(Classical) Molecular Dynamics - Rosta Group Wiki</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
-
-        <script src="../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
     </head>
 
     <body>
@@ -71,8 +68,20 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#molecular-dynamics" class="nav-link">Molecular Dynamics</a>
+            <li class="nav-item" data-level="1"><a href="#classical-molecular-dynamics" class="nav-link">(Classical) Molecular Dynamics</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#initial-structure" class="nav-link">Initial structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#making-an-explicit-atomistic-model" class="nav-link">Making an explicit atomistic model</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#equilibration" class="nav-link">Equilibration</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -80,7 +89,70 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="molecular-dynamics">Molecular Dynamics</h1></div>
+<h1 id="classical-molecular-dynamics">(Classical) Molecular Dynamics</h1>
+<p>This page gives an overview of system setup for classical 
+biomolecular MD simulations. It is by no means comprehensive, and it 
+relies on the experience of the group.</p>
+<h2 id="initial-structure">Initial structure</h2>
+<p>Most simulations are based on one or more experimental structures, 
+and one may use homology modelling to for certain parts. 
+Important to remember that none of these are perfect. Generally, it 
+is advisable to collect the structures related to the state the model
+is to be created for and determine a consensus structure. Sometimes
+certain regions are patched from other, even loosely homologous 
+proteins.</p>
+<h2 id="making-an-explicit-atomistic-model">Making an explicit atomistic model</h2>
+<p>Structures are seldom atomistically explicit, as hydrogens are 
+typically resolved. There are multiple aspects of creating a complete
+model:</p>
+<h3 id="proteins-nucleic-acids">Proteins, nucleic acids</h3>
+<p>Biomolecules are heavily studied with molecular mechanics, therefore
+force fields and tools are prepared for helping us create an 
+atomistic model. Note that these often rely on the residue and atom 
+names. Adding missing atoms and explicit hydrogens are usually part
+of any software's preparation pipeline.</p>
+<h4 id="protonation-state">Protonation state</h4>
+<p>Pay extra attention to protic and polar moieties. Propka is a good
+starting point to set up the protonation state, it is advisable to 
+inspect the structure wherever a discrepancy is suggested from the 
+expected protonation state. Furthermore, histidines have a tiny
+difference between the delta and epsilon states, therefore the local
+environment is to be studied to decide which is more favourable.
+There are more comprehensive tools to optimise the overall H-bonding
+network, e.g. the protein preparation wizard of the Schrödinger Suite.</p>
+<h3 id="ion-sites-crystallographic-waters">Ion sites, crystallographic waters</h3>
+<p>For a correct setup, collecting all available structures are especially
+important in this regard. Some ions, like Mg2+ will require an 
+octahedral coordination, which may need to be completed by water
+molecules. Others, like Zn2+, prefer tetrahedral, which is difficult 
+to maintain by formal charge non-bonding interaction setups. Special
+force field patches can be employed to address this, e.g. ZAFF. 
+Depending on the software, implementing these may require a 
+modification to the topology. Also pay attention to other waters, as 
+some may have a structural role in positions hardly accessible from 
+bulk or for the solvation algorithms.</p>
+<h3 id="ligands-substrates">Ligands, substrates</h3>
+<p>Unlike biomolecules, the connectivity is not straightforward from
+ligand 3D structures, therefore dedicated attention is needed for 
+correct bond orders. Several all atom force fields or parametrisation
+options are available. The easiest improvement on these are using QM
+calculated (R)ESP charges. It is important to note, that in some cases
+molecular symmetry is not automatically considered.</p>
+<h4 id="protonation-state_1">Protonation state</h4>
+<p>Crucially, ligand protonation has to be set up correctly. Beyond 
+chemical intuition, pKa estimators for small molecules are available,
+e.g. Epik in Schrödinger or a free tool within Marvin sketch.</p>
+<h2 id="equilibration">Equilibration</h2>
+<p>The general experience is, the slower, the better. After solvation and
+electrolite setup, a minimisation can help to remove a degree of
+clashes, a check of the crucial structural details is always advisable.
+It is often a good strategy to separate the equilibration of certain
+degrees of freedom by applying some extra restraints which are then
+gradually released. The decision on this is highly contextual, based 
+on the source of the initial structure and the goal of the simulation.
+Although simulations often supposed to be ergodic, running replicas is
+generally helpful for sampling.</p>
+<p><small><em>D. Berta, Nov 2023</em></small></p></div>
             </div>
         </div>
 
@@ -88,12 +160,14 @@
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
+        <script src="../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
         <script>
             var base_url = "../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../../js/base.js" defer></script>
-        <script src="../../search/main.js" defer></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">

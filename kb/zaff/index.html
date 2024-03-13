@@ -4,23 +4,23 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
         
         
-        <link rel="shortcut icon" href="img/favicon.ico">
-        <title>Rosta Group Wiki</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/font-awesome.min.css" rel="stylesheet">
-        <link href="css/base.css" rel="stylesheet">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Zaff - Rosta Group Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script>hljs.highlightAll();</script> 
     </head>
 
-    <body class="homepage">
+    <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href=".">Rosta Group Wiki</a>
+                <a class="navbar-brand" href="../..">Rosta Group Wiki</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -30,17 +30,17 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem active">
-                                <a href="." class="nav-link">Home</a>
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
                             </li>
                             <li class="navitem">
-                                <a href="general_info/onboarding/" class="nav-link">General Info</a>
+                                <a href="../../general_info/onboarding/" class="nav-link">General Info</a>
                             </li>
                             <li class="navitem">
-                                <a href="members/" class="nav-link">Members</a>
+                                <a href="../../members/" class="nav-link">Members</a>
                             </li>
                             <li class="navitem">
-                                <a href="kb/topics/" class="nav-link">Knowledge Base</a>
+                                <a href="../topics/" class="nav-link">Knowledge Base</a>
                             </li>
                         </ul>
 
@@ -50,16 +50,6 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="nav-item">
-                                <a rel="prev" class="nav-link disabled">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="general_info/onboarding/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                     </ul>
                 </div>
             </div>
@@ -78,7 +68,17 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#introduction" class="nav-link">Introduction</a>
+            <li class="nav-item" data-level="2"><a href="#background" class="nav-link">Background</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#zaff" class="nav-link">ZAFF</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#implementation" class="nav-link">Implementation</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -87,14 +87,62 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="introduction">Introduction</h1>
-<p>This Wiki Page collates information of the lab and the research that is conducted. You can find helps, guides, intros to topics, etc.</p>
-<h3 id="important-pages-for-new-comers">Important Pages for New Comers:</h3>
-<h4 id="general-info"><a href="general_info/onboarding/">General Info</a></h4>
-<p>Here, you can get the basics of how the lab works.
-<br></p>
-<h4 id="members"><a href="members/">Members</a></h4>
-<p>Here, you can find out the current and past members of the lab and how to contact them if need be.</p></div>
+<h2 id="background">Background</h2>
+<p>Zinc(II) ions are commonly bound by proteins, link to nucleic acid
+recognision and binding. Zn<sup>2+</sup> has 10 valence electrons, which
+warrants a tetrahedral coordination with four two-electron donors. 
+Typically, these are (deprotonated) cysteines or histidines, sometimes
+can be alcohol sidechains or water. These moieties are often called 
+Zn fingers.</p>
+<p>MM force fields generally rely on describing ion binding by non-bonding
+interactions, electrostatics and van der Waals. This often breaks down 
+with Zn fingers, partly because they do not account for the covalent 
+character of the binding and because they ignore the charge transfer 
+from Lewis base to acid. Therefore, keeping the formal 2+ charge on the 
+zinc creates an electrostatic well polling in negative particles, and
+since the size exclusion allows enough space for six ligands, often
+results in an octahedral coordination around the metal ion.</p>
+<h2 id="zaff">ZAFF</h2>
+<p>Zinc Amber Force Field (ZAFF) was 
+<a href="https://doi.org/10.1021/acs.jctc.7b00773">developed</a> 
+to handle these issues, a useful 
+<a href="https://ambermd.org/tutorials/advanced/tutorial20/ZAFF.php">tutorial</a>
+is available for its usage. It describes 12 different Zn fingers, 
+varied in the type and protonation of the coordinating residues. Further
+combinations can be created either based on these parameters, or by
+carrying out QM calculations, especially for getting the (RESP) charges.</p>
+<h2 id="implementation">Implementation</h2>
+<p>There are two major changes that are required for using the modified FF,
+apart from the obvious deprotonation of coordinating cysteins (CYS-&gt;CYM).
+One is the modification of the system topology, including the 2-3-4 atom
+interactions involving the zinc. The other one is modifying the charges,
+which, depending on the software environment, may require the definition
+of one-off residue types, see the amber
+<a href="https://ambermd.org/tutorials/advanced/tutorial20/files/zaff/ZAFF.prep">example</a>.</p>
+<h3 id="namd">NAMD</h3>
+<p><em>I discuss the usage in NAMD, as our preferred MD engine, especially with
+the CHARMM36m forcefield shipped from CHARMM-GUI</em></p>
+<p>CHARMM also implemented extra parameters for the Zn fingers, part of the
+<code>toppar_all36_prot_modify_res.str</code> compilation. Here the bonding, angle
+and dihedral parameters are set for S and N atoms, assuming CYM and HIS
+(HSD or HSE) coordination. To use these, the <code>psf</code> file of the system 
+has to be modified: registering the index of the atoms involved, 
+doubles, triples and quadrupoles for bonds, angles and dihedrals are to 
+be added to their respective sections, so the software will invoke these
+parameters.
+Although this modification could be scripted, we have not done that as 
+it only has to be done once for a <code>psf</code>.</p>
+<p><em>(Some classical MD software register only the parameters which are
+used, like amber or gromacs. In NAMD or charmm, one may read in many
+redundant paremeters, the necessary ones are employed in runtime based
+on the topology.)</em></p>
+<p>The second modification is swapping the charges to the ones representing
+the charge transfer. In NAMD, that can be done in the <code>psf</code> as well. I
+suggest borrowing them from ZAFF, the minor changes are within the 
+errors of the forcefield. For instance, the Zn(CYM)<sub>4</sub> site
+assigns a partial charge of <code>0.52437</code> to the zinc, and the CYM 
+sidechains are modified accordingly to have a net of -2 for the moiety.</p>
+<p><small><em>D. Berta, Mar 2024</em></small></p></div>
             </div>
         </div>
 
@@ -102,14 +150,14 @@
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script src="js/jquery-3.6.0.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <script src="../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
         <script>
-            var base_url = ".",
+            var base_url = "../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="js/base.js"></script>
-        <script src="search/main.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -174,8 +222,3 @@
 
     </body>
 </html>
-
-<!--
-MkDocs version : 1.5.3
-Build Date UTC : 2024-03-13 09:50:54.347037+00:00
--->
